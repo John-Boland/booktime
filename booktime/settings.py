@@ -70,7 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'booktime.wsgi.application'
 
-
+# 'test'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
