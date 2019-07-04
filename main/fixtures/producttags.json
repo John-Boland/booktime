@@ -1,0 +1,20 @@
+[
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Nietzsche",
+    "slug": "nietzsche",
+    "description": "Text by Philosopher Nietzsche",
+    "active": true
+  }
+},
+{
+  "model": "main.producttag",
+  "fields": {
+    "name": "Kierkegaard",
+    "slug": "kierkegaard",
+    "description": "Text by Philosopher Kierkegaard",
+    "active": true
+  }
+}
+]
