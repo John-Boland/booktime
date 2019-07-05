@@ -12,13 +12,13 @@ class TestImport(TestCase):
         args = ['main/fixtures/product-sample.csv',
                 'main/fixtures/product-sampleimages/']
 
-        call_command(('import_data', *args, stdout=out))
+        call_command('import_data', *args, stdout=out)
 
         expected_out = ("Importing products\n"
                         "Products processed=2 (created=2)\n"
                         "Tags processed=2 (created=2)\n"
                         "Images processed=0\n")
-        self.assertEqual(out.getvalue(, expected_out))
+        self.assertEqual(out.getvalue(), expected_out)
         self.assertEqual(models.Product.objects.count(), 2)
         self.assertEqual(models.ProductTag.objects.count(), 2)
         self.assertEqual(models.ProductImage.objects.count(), 0)
