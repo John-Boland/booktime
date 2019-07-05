@@ -3,6 +3,10 @@
 {% block content %}
     <h1>products</h1>
     <table class="table">
+        <a
+          href="{% url "add_to_basket" %}?product_id={{ object.id }}">
+          Add to basket
+        </a>
         <tr>
             <th>Name</th>
             <td>{{ object.name }}</td>

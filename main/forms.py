@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import inlineformset_factory
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import (
@@ -6,9 +7,18 @@ from django.contrib.auth.forms import (
 )
 from django.contrib.auth.forms import UsernameField
 from . import models
+from . import widgets
 import logging
 
 logger = logging.getLogger(__name__)
+
+BasketLineFormSet = inlineformset_factory(
+    models.Basket,
+    models.BasketLine,
+    fields=("quantity",),
+    extra=0,
+    widgets={"quantity": widgets.PlusMinusNumberInput()},
+)
 
 class ContactForm(forms.Form):
     name = forms.CharField(label='Your name', max_length=100)
