@@ -37,11 +37,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
     'webpack_loader',
+    'django_extensions',
+    'debug_toolbar',
+    'django_tables2',
+    'widget_tweaks',
+    'rest_framework',
+    'main.apps.MainConfig',
+
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':
+    ('rest_framework.authentication.SessionAuthentication',
+     'rest_framework.authentication.BasicAuthentication'),
+     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissions',),
+     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+     'DEFAULT_PAGINATION_CLASS':
+     'rest_framework.pagination.PageNumberPagination',
+     'PAGE_SIZE': 100
+}
+
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -51,6 +69,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'main.middlewares.basket_middleware',
 ]
+
+INTERNAL_IPS = ['127.0.0.1']
 
 ROOT_URLCONF = 'booktime.urls'
 
@@ -154,3 +174,5 @@ WEBPACK_LOADER = {
         'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
     }
 }
+
+DJANGO_TABLES2_TEMPLATE = 'django_tables2/bootstrap.html'

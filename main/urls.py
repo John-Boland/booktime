@@ -1,4 +1,5 @@
 from django.urls import path, include
+from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
@@ -78,5 +79,19 @@ urlpatterns = [
         views.AddressSelectionView.as_view(),
         name="address_select",
     ),
+    path(
+        "order-dashboard/",
+        views.OrderView.as_view(),
+        name="order_dashboard",
+        ),
+    path('api/', include(router.urls)),
+
+
 
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

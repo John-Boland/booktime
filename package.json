@@ -21,11 +21,11 @@
     "build": "webpack"
   },
   "jest": {
-      "moduleDirectories": [
-          "node_modules",
-          "frontend"
-      ],
-      "testURL": "http://localhost/"
+    "moduleDirectories": [
+      "node_modules",
+      "frontend"
+    ],
+    "testURL": "http://localhost/"
   },
   "repository": {
     "type": "git",
