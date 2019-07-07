@@ -89,3 +89,11 @@ class AuthenticationForm(forms.Form):
 
     def get_user(self):
         return self.user
+
+
+BasketLineFormSet = inlineformset_factory(
+    models.Basket,
+    models.BasketLine,
+    fields=("quantity",),
+    extra=0,
+)
