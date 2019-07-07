@@ -1,0 +1,41 @@
+{
+  "name": "booktime",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "webpack.config.js",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "jest": "^24.8.0",
+    "webpack": "^4.35.2",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.3.5"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "webpack"
+  },
+  "jest": {
+      "moduleDirectories": [
+          "node_modules",
+          "frontend"
+      ],
+      "testURL": "http://localhost/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnboland91/booktime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnboland91/booktime/issues"
+  },
+  "homepage": "https://github.com/johnboland91/booktime#readme"
+}

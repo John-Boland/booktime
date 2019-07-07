@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 django = "*"
 pillow = "*"
+selenium = "*"
+django-webpack-loader = "*"
 
 [requires]
 python_version = "3.7"
