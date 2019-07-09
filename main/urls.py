@@ -4,9 +4,16 @@ from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 
+from rest_framework import routers
+
 from main import views
 from main import models
 from main import forms
+from main import endpoints
+
+router = routers.DefaultRouter()
+router.register(r'orderlines', endpoints.PaidOrderLineViewSet)
+router.register(r'orders', endpoints.PaidOrderViewSet)
 
 urlpatterns = [
     path(

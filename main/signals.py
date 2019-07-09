@@ -57,11 +57,10 @@ def merge_baskets_if_found(sender, user, request,**kwargs):
 
 @receiver(post_save, sender=OrderLine)
 def orderline_to_order_status(sender, instance, **kwargs):
-    if not instance.order.lines.filter(status__lt=Orderline.
-    SENT).exists():
-    logger.info(
-        "All lines for order %d have been processed. Marking as done.",
-        instance.order.id,
-    )
-    instance.order.status = Order.DONE
-    instance.order.save()
+    if not instance.order.lines.filter(status__lt=Orderline.SENT).exists():
+        logger.info(
+            "All lines for order %d have been processed. Marking as done.",
+            instance.order.id,
+        )
+        instance.order.status = Order.DONE
+        instance.order.save()
