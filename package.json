@@ -14,7 +14,7 @@
     "jest": "^24.8.0",
     "webpack": "^4.35.2",
     "webpack-bundle-tracker": "^0.4.2-beta",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "test": "jest",
